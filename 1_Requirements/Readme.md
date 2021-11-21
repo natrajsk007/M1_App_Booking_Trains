@@ -96,5 +96,32 @@ In this project I am going to include entities like
 
     1.Metro in a commercial cities like Chennai, Mumbai.
 
-    2.May avoid crowds and queues in stations.
+    2.May avoid crowds and queues in railway stations.
+
+
+### ***THREATS***
+
+    1.Low cost airlines.
+
+    2.Improvement of other infrastructure like roadways.
+
+## *HIGH LEVEL REQUIREMENTS*
+
+
+| ID   |      Description     |  Status |
+|----------|:-------------:|------:|
+| HLR_1 |  The user can give their Name| Implemented  |
+| HLR_2 |    The user can give their Age  | Implemented  |
+| HLR_3 |    The user can choose their starting point  | Implemented  |
+| HLR_4 |    The user can choose their destination  | Implemented  |
+| HLR_5 |    The user can chhose their train  | Implemented  |
+| HLR_6 |    The user can book their confirmation | Implemented  |
+| HLR_7 |    The user can confirm their payment successful  | Implemented  |
+
+# Low Level Requirements
+| ID   |      Description     |  Status |
+|----------|:-------------:|------:|
+| LLR_1 |  List of trains displayed | Implemented  |
+| LLR_2 |  Input from the user  | Implemented  |
+| LLR_3 |  Exit the program  | Implemented  |
 
