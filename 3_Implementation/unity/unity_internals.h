@@ -32,3 +32,15 @@ new_node->next=NULL;
 	}
 }
 }
+void display()
+{
+	node *temp;
+	temp=start;
+	while(temp!=NULL)
+	{
+		printf("\nRegistration Number: %d\n", temp->reg_no);
+		printf("Name : %s\n\n", temp->name);
+		temp=temp->next;
+    }
+    
+}
