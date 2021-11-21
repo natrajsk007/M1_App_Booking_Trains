@@ -114,7 +114,7 @@ In this project I am going to include entities like
 | HLR_2 |    The user can give their Age  | Implemented  |
 | HLR_3 |    The user can choose their starting point  | Implemented  |
 | HLR_4 |    The user can choose their destination  | Implemented  |
-| HLR_5 |    The user can chhose their train  | Implemented  |
+| HLR_5 |    The user can choose their train  | Implemented  |
 | HLR_6 |    The user can book their confirmation | Implemented  |
 | HLR_7 |    The user can confirm their payment successful  | Implemented  |
 
