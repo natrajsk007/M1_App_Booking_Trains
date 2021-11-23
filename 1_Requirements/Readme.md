@@ -30,6 +30,13 @@ In this project I am going to include entities like
    -Waiting list passengers
 
 
+##  *AGEING-FEATURE EVOLUTION*
+   -Tracking live location of trains
+   -Pre order the food and drinks
+   -Alarm before the stopping if night travel applicable
+   -Notify the destination time on the booking time
+
+
 ## *4W's and 1H's*
 
 
