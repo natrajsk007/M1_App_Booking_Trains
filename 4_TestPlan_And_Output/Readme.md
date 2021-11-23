@@ -18,4 +18,7 @@
 
 # *OUTPUT*
 
-![Flowchart-of-conventional-and-online-ticket-reservations]
+![Flowchart-of-conventional-and-online-ticket-reservations]![Screenshot (119)](https://user-images.githubusercontent.com/94169022/143005696-f99980d0-a148-4e92-a91b-5462688758a9.png)
+
+
+![Flowchart-of-conventional-and-online-ticket-reservations]![Screenshot (119)]![Screenshot (120)](https://user-images.githubusercontent.com/94169022/143005778-2259fc4e-b636-419f-b2ce-45c7318d787f.png)
