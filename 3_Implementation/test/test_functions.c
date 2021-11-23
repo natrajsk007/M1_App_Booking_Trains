@@ -2,7 +2,7 @@ int create( )
 {
 	node *new;
 	new=(node *)malloc(sizeof(node));
-	new->reg_no=1;
+	new->booking_no=1;
 	printf("Name: ");
 	scanf("%s", new->name);
 	printf("Age : ");

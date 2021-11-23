@@ -5,7 +5,7 @@ if(new_node->age >=90 || new_node>age<=10) {
 new_node->next=NULL;
 	if(num<=size){
 		num++;
-		new_node->reg_no=num;
+		new_node->booking_no=num;
 		temp->next=new_node;
 		return 1;
 	}
@@ -22,7 +22,7 @@ if(new_node->age >=90 || new_node>age<=10) {
 new_node->next=NULL;
 	if(num<=size){
 		num++;
-		new_node->reg_no=num;
+		new_node->booking_no=num;
 		temp->next=new_node;
 		return 1;
 	}
@@ -38,7 +38,7 @@ void display()
 	temp=start;
 	while(temp!=NULL)
 	{
-		printf("\nRegistration Number: %d\n", temp->reg_no);
+		printf("\nBooking Number: %d\n", temp->booking_no);
 		printf("Name : %s\n\n", temp->name);
 		temp=temp->next;
     }

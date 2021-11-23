@@ -1,3 +1,14 @@
+/**
+ * @file main.c
+ * @author Natarajan K
+ * @brief Main
+ * @version 0.1
+ * @date 2021-11-23
+ * 
+ * @copyright Copyright (c) 2021
+ * 
+ */
+
 #include<stdio.h>
 #include<stdlib.h>
 #define size 2
@@ -5,9 +16,9 @@
 
 typedef struct NODE
 {
-	int reg_no;
+	int booking_no;
 	int age;
-	char name[20];
+	char name[25];
 	struct NODE *next;
 } node;
 
@@ -29,7 +40,7 @@ int create( )
 {
 	node *new;
 	new=(node *)malloc(sizeof(node));
-	new->reg_no=1;
+	new->booking_no=1;
 	printf("Name: ");
 	scanf("%s", new->name);
 	printf("Age : ");
@@ -76,7 +87,7 @@ int reserve(node *start)
 	if(num<=size)
 	{
 		num++;
-		new_node->reg_no=num;
+		new_node->booking_no=num;
 		temp->next=new_node;
 		
 		return 1;
@@ -90,14 +101,14 @@ int reserve(node *start)
 }
 
 
-int cancel(int reg)
+int cancel(int booking)
 {
 	node *ptr, *preptr, *new;
 	ptr=start;
 	preptr=NULL;
 	if(start==NULL)
 	return -1;
-	if(ptr->next==NULL && ptr->reg_no==reg)
+	if(ptr->next==NULL && ptr->booking_no==booking)
 		{
 		start=NULL;
 		num--;
@@ -107,12 +118,12 @@ int cancel(int reg)
 		}
 		
 	else{	
-	while(ptr->reg_no!=reg && ptr->next!=NULL)
+	while(ptr->booking_no!=booking && ptr->next!=NULL)
 		{
 			preptr=ptr;
 			ptr=ptr->next;
 		}
-		if(ptr==NULL && ptr->reg_no!=reg)
+		if(ptr==NULL && ptr->booking_no!=booking)
 			return -1;
 		else
 			preptr->next=ptr->next;
@@ -178,7 +189,7 @@ void display()
 	temp=start;
 	while(temp!=NULL)
 	{
-		printf("\nRegistration Number: %d\n", temp->reg_no);
+		printf("\nBooking Number: %d\n", temp->booking_no);
 		printf("Name : %s\n\n", temp->name);
 		temp=temp->next;
     }
@@ -187,18 +198,18 @@ void display()
 
 int main()
 {
-	int choice, status=0,canc=0, reg=0;
+	int choice, status=0,canc=0, booking=0;
 	start=NULL;
 	rear=NULL;
 	front=NULL;
 	
 	
 	
-	printf("\t\t\t**RAILWAY RESERVATION**\t\t\t\t\n");
+	printf("\t\t\t**BOOKING TRAINS**\t\t\t\t\n");
 	int ch =0;
 	while(ch!=4)
 	{
-	printf("\n\nDo you want to - \n 1. Book a ticket \n 2. Cancel Booking \n 3. Display passenger details \n 4. exit\n\n");
+	printf("\n\nDo you want to - \n 1. Ticket Booking \n 2. Cancel Booking \n 3. Display passenger details \n 4. exit\n\n");
 	scanf("%d", &choice); 
 	switch(choice)
 	{	
@@ -209,21 +220,21 @@ int main()
                       printf("\n age not eligible");
                   }
                   else
-	                printf(" \nBooking Successful!!! Enjoy your journey! Your Reg No is %d\n\n", num);
+	                printf(" \nBooking Successful!!! Enjoy your journey! Your Booking No is %d\n\n", num);
 	                
 	              break;
 	        
-	    case 2:   printf(" \n Give the Registration number to be cancelled\n");
-	              scanf(" %d", &reg);
-	              if(reg>num)
+	    case 2:   printf(" \n Give the Booking number to be cancelled\n");
+	              scanf(" %d", &booking);
+	              if(booking>num)
 	              printf("Invalid!!");
 	              else
 	              {
-	              canc=cancel(reg);
+	              canc=cancel(booking);
 	              if(canc==-1)
-	              	printf("\nRegistration number invalid!!\n");
+	              	printf("\nBooking number invalid!!\n");
 	              else
-	              	printf("\nRegistration cancelled successfully\n");
+	              	printf("\nBooking cancelled successfully\n");
 	              	}
 	              break;
 	              

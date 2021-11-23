@@ -21,7 +21,7 @@ if(new_node->age >=90 || new_node>age<=10) {
 new_node->next=NULL;
 	if(num<=size){
 		num++;
-		new_node->reg_no=num;
+		new_node->booking_no=num;
 		temp->next=new_node;
 		return 1;
 	}

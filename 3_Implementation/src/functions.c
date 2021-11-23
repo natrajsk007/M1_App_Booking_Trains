@@ -1,7 +1,7 @@
 typedef struct NODE
 {
-	int reg_no;
+	int booking_no;
 	int age;
-	char name[20];
+	char name[25];
 	struct NODE *next;
 } node;
