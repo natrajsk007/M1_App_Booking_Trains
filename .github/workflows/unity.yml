@@ -1,4 +1,4 @@
-name: C/C++ CI UnitTesting
+name: Unit Testing - Unity
 
 on:
   push:
@@ -9,9 +9,9 @@ on:
 jobs:
   test:
 
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
     - name: make
-      run: make -C 3_Implementation/ test
+      run: cd 3_Implementation; make test 
