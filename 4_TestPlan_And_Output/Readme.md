@@ -12,4 +12,10 @@
 | ID   |      Description     |  Expected o/p |
 |----------|:-------------:|------:|
 | LLTP_1 |  Input from the user | 1  |
-| LLTP_2 |  Exit the program | 1 |
+| LLTP_1 |  Cancel Booking| 2  |
+| LLTP_2 |  Exit the program | 4 |
+
+
+# *OUTPUT*
+
+![Flowchart-of-conventional-and-online-ticket-reservations]
