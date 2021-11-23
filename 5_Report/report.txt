@@ -1,1 +1,427 @@
+# *TITLE:* #  **BOOKING TRAINS APPLICATION**
+
+
+
+# **REQUIREMENTS**
+
+
+
+## *INTRODUCTION*
+
+
+1.This system is basically concerned with the reservation of railway tickets to the passengers.
+
+2.In this I am discussing that how the reservation is done with the feature of cancelling and waiting list.
+
+
+## *OBJECTIVE OF THE PROJECT*
+
+
+1.All the manual work should be converted into computerized so that the load of employees should decrease.
+
+2.The data should be stored in computer rather than in register manually.
+
+3.Booking can be done by sitting at your home only, no need to visit the booking counter.
+
+
+## *FEATURES*
+
+
+In this project I am going to include entities like
+   -Reservation
+   -Cancellation
+   -Display reserved
+   -Waiting list passengers
+
+
+## *4W's and 1H's*
+
+
+ ### **WHY:**
+
+   1.Passengers who wish to travel in trains must reserve their seat in advance for all classes of travel except for General/Unreserved coaches.
+
+   2.The railway reservation facility allows you to travel in the train and travel class of your choice with a berth/seat allotted against your name.
+
+
+ ### **WHEN:**
+
+    1.Online booking of train tickets are allowed from 00:20 am to 11:45 pm (IST) on all days including Sundays, according to IRCTC.
+
+    2.You can reserve your ticket 60 days in advance, excluding the date of journey at the train originating station.
+
+
+ ### **WHERE:**
+
+    1.People can now book their railway tickets through their mobile phones by using IRCTC website or application software (app)
+
+    2.We can book tickets from home through online platforms, easy payments through net banking and UPI and others.
+
+
+ ### **WHO:**
+
+    1.Peoples who wish to have a safe journey and minimize his time on travelling for their trips.
+
+    2.Hostel Students or Employees whose plan their leave travel in advance can book their tickets.
+
+
+ ### **HOW:**
+
+    1.Visit any website/app for booking trains.
+
+    2.Select the boarding & arrival destinations.
+
+    3.Select a train that is best suited to your needs.
+
+    4.Fill in your details.
+
+    5.Proceed to our easy payment gateway.
+
+    6.Train Ticket booking confirmation via Email, SMS, WhatsApp will be sent to you.
+
+
+## *SWOT ANALYSIS*
+
+
+ ### ***STRENGTHS***
+
+    1.Luxurious and affordable to common man.
+
+    2.Technological Advancement.
+
+
+ ### ***WEAKNESS***
+
+    1.Delayed Trains.
+
+    2.May be delay in refund amounts if cancellation is applicable.
+
+ ### ***OPPORTUNITIES***
+
+    1.Metro in a commercial cities like Chennai, Mumbai.
+
+    2.May avoid crowds and queues in railway stations.
+
+
+### ***THREATS***
+
+    1.Low cost airlines.
+
+    2.Improvement of other infrastructure like roadways.
+
+## *HIGH LEVEL REQUIREMENTS*
+
+
+| ID   |      Description     |  Status |
+|----------|:-------------:|------:|
+| HLR_1 |  The user can give their Name| Implemented  |
+| HLR_2 |    The user can give their Age  | Implemented  |
+| HLR_3 |    The user can choose their starting point  | Implemented  |
+| HLR_4 |    The user can choose their destination  | Implemented  |
+| HLR_5 |    The user can choose their train  | Implemented  |
+| HLR_6 |    The user can book their confirmation | Implemented  |
+| HLR_7 |    The user can confirm their payment successful  | Implemented  |
+
+# Low Level Requirements
+| ID   |      Description     |  Status |
+|----------|:-------------:|------:|
+| LLR_1 |  List of trains displayed | Implemented  |
+| LLR_2 |  Input from the user  | Implemented  |
+| LLR_3 |  Exit the program  | Implemented  |
+
+
+
+# *FLOWCHART*
+
+
+![Flowchart-of-conventional-and-online-ticket-reservations](https://user-images.githubusercontent.com/94169022/142774626-e15ab591-3a18-4926-8629-0ea702615ab8.png)
+
+
+# *STRUCTURAL DIAGRAM*
+
+![Flowchart-of-conventional-and-online-ticket-reservations](https://user-images.githubusercontent.com/94169022/142997159-c77fbfca-2ca0-4b35-900d-ac5cd0580ea5.jpg)
+
+
+# Implementation
+# Folder Structure
+| Folder   |      Description     |
+|----------|:-------------:|
+| document | Doxygen documentation |
+| inc | All header files |
+| src | Main source code for Booking Trains |
+| test | All source code and data for testing purposes |
+
+
+# **MAIN PROGRAM**
+
+
+#include<stdio.h>
+#include<stdlib.h>
+#define size 2
+
+
+typedef struct NODE
+{
+	int reg_no;
+	int age;
+	char name[20];
+	struct NODE *next;
+} node;
+
+node* deq();
+int create();
+int reserve(node*);
+int cancel(int);
+void enq(node*);
+void display();
+
+
+node *start;
+node *front;
+node *rear;
+int count=0;
+int num=0;
+
+int create( )
+{
+	node *new;
+	new=(node *)malloc(sizeof(node));
+	new->reg_no=1;
+	printf("Name: ");
+	scanf("%s", new->name);
+	printf("Age : ");
+	scanf("%d", &new->age);
+    if(new->age>=90 || new->age<=10) {
+        free(new);
+        return -1;
+    }
+	start=new;
+	new->next=NULL;
+	num++;
+    return 1;
+	
+}
+
+int reserve(node *start)
+{
+	int temp;
+	if(start==NULL)
+	{   
+   		temp = create(start);
+		 return temp;
+	}
+	else 
+	{
+	
+	node *temp, *new_node;
+	temp=start;
+	while(temp->next!=NULL)
+	{ 
+	  temp=temp->next;
+	}
+	
+	new_node=(node *)malloc(sizeof(node));
+	
+	printf("Name: ");
+	scanf("%s", new_node->name);
+	printf("Age : ");
+	scanf("%d", &new_node->age);
+    if(new_node->age >=90 || new_node->age<=10) {
+        return -1;
+    }
+	new_node->next=NULL;
+	if(num<=size)
+	{
+		num++;
+		new_node->reg_no=num;
+		temp->next=new_node;
+		
+		return 1;
+	}
+	else
+	{
+		enq(new_node);
+		return 0;
+	}
+}
+}
+
+
+int cancel(int reg)
+{
+	node *ptr, *preptr, *new;
+	ptr=start;
+	preptr=NULL;
+	if(start==NULL)
+	return -1;
+	if(ptr->next==NULL && ptr->reg_no==reg)
+		{
+		start=NULL;
+		num--;
+		free(ptr);
+		return 1;
+		
+		}
+		
+	else{	
+	while(ptr->reg_no!=reg && ptr->next!=NULL)
+		{
+			preptr=ptr;
+			ptr=ptr->next;
+		}
+		if(ptr==NULL && ptr->reg_no!=reg)
+			return -1;
+		else
+			preptr->next=ptr->next;
+		free(ptr);
+		new=deq();
+		while(preptr->next!=NULL)
+			preptr=preptr->next;
+		preptr->next=new;
+		num--;
+		return 1;
+	
+	}
+}
+
+void enq(node *new_node)
+{
+	if(rear==NULL)
+	{
+		rear=new_node;
+		rear->next=NULL;
+		front=rear;
+	}
+	else
+	{
+		node *temp;
+		temp=new_node;
+		rear->next=temp;
+		temp->next=NULL;
+		rear=temp;
+	}
+	count++;
+}
+
+node* deq()
+{
+	node *front1;
+	front1=front;
+	if(front==NULL)
+		return NULL;
+	else
+	{
+	    count-- ;
+		if(front->next!=NULL)
+		{
+			front=front->next;
+			front1->next=NULL;
+			return front1;
+		}
+		else
+		{
+			front=NULL;
+			rear=NULL;
+			
+			return front1;
+		}
+	}	
+}
+
+
+void display()
+{
+	node *temp;
+	temp=start;
+	while(temp!=NULL)
+	{
+		printf("\nRegistration Number: %d\n", temp->reg_no);
+		printf("Name : %s\n\n", temp->name);
+		temp=temp->next;
+    }
+    
+}
+
+int main()
+{
+	int choice, status=0,canc=0, reg=0;
+	start=NULL;
+	rear=NULL;
+	front=NULL;
+	
+	
+	
+	printf("\t\t\t**RAILWAY RESERVATION**\t\t\t\t\n");
+	int ch =0;
+	while(ch!=4)
+	{
+	printf("\n\nDo you want to - \n 1. Book a ticket \n 2. Cancel Booking \n 3. Display passenger details \n 4. exit\n\n");
+	scanf("%d", &choice); 
+	switch(choice)
+	{	
+		case 1 :  status=reserve(start);
+	              if(status==0)
+	                printf("\nBooking Full!! \nYou are added to waiting list. Waiting list number %d", count);
+	              else if(status == -1) {
+                      printf("\n age not eligible");
+                  }
+                  else
+	                printf(" \nBooking Successful!!! Enjoy your journey! Your Reg No is %d\n\n", num);
+	                
+	              break;
+	        
+	    case 2:   printf(" \n Give the Registration number to be cancelled\n");
+	              scanf(" %d", &reg);
+	              if(reg>num)
+	              printf("Invalid!!");
+	              else
+	              {
+	              canc=cancel(reg);
+	              if(canc==-1)
+	              	printf("\nRegistration number invalid!!\n");
+	              else
+	              	printf("\nRegistration cancelled successfully\n");
+	              	}
+	              break;
+	              
+	    case 3: display();
+	    break;
+	    case 4: exit(0);   
+	    break;
+	    default: printf("\nWrong choice!\n");       
+	              
+	                 
+		          
+	
+	}
+	
+}
+
+}
+
+
+# *Test Plan*
+
+# High Level Test Plan
+| ID   |      Description     |  Expected o/p |
+|----------|:-------------:|------:|
+| HLTP_1 |  Get any Option from the user| Implemented  |
+| HLTP_2 |  Get Name from the user  | Implemented  |
+| HLTP_3 |  Get Age from the user | Implemented|
+| HLTP_3 |  Get Registration Number from the user | Implemented|
+
+# Low Level Test Plan
+| ID   |      Description     |  Expected o/p |
+|----------|:-------------:|------:|
+| LLTP_1 |  Input from the user | 1  |
+| LLTP_1 |  Cancel Booking| 2  |
+| LLTP_2 |  Exit the program | 4 |
+
+
+# *OUTPUT*
+
+![Flowchart-of-conventional-and-online-ticket-reservations]![Screenshot (119)](https://user-images.githubusercontent.com/94169022/143005696-f99980d0-a148-4e92-a91b-5462688758a9.png)
+
+
+![Flowchart-of-conventional-and-online-ticket-reservations]![Screenshot (119)]![Screenshot (120)](https://user-images.githubusercontent.com/94169022/143005778-2259fc4e-b636-419f-b2ce-45c7318d787f.png)
 
