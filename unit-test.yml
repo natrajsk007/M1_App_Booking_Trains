@@ -1,18 +1,17 @@
-name: Unit testing
+name: C/C++ CI UnitTesting
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
   pull_request:
-    branches: [ master ]
-jobs:
-  build:
+    branches: [ main ]
 
-    runs-on: ubuntu-latest
+jobs:
+  test:
+
+    runs-on: windows-latest
 
     steps:
     - uses: actions/checkout@v2
-    - name: Install Cunit
-      run: sudo apt-get -y install libcunit1 libcunit1-doc libcunit1-dev 
-    - name: make 
-      run:  make -C 3_Implementation/ test
+    - name: make
+      run: make -C 3_Implementation/ test
