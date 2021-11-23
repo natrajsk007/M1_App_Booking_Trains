@@ -4,7 +4,7 @@ int create( )
 	new=(node *)malloc(sizeof(node));
 	new->booking_no=1;
 	printf("Name: ");
-	scanf("%s", new->name);
+	scanf("%s", &new->name);
 	printf("Age : ");
 	scanf("%d", &new->age);
     if(new->age>=90 || new->age<=10) {
