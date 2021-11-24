@@ -18,21 +18,22 @@
 
 # IMAGES AND GIFS
 
+
 ![image](https://user-images.githubusercontent.com/94169022/143197759-67357946-41ce-449b-a39b-64aa3ce4c709.png)
 
 
-![gif](https://user-images.githubusercontent.com/94169022/143214683-170d4ecf-bef1-497c-bd80-f4d1be50f234.png)
+
 
 
 ![image](https://user-images.githubusercontent.com/94169022/143197928-b827589e-b98a-4b89-83b8-fa4a9e8e9285.png)
 
 
-![image](https://user-images.githubusercontent.com/94169022/143215184-e006898e-9336-43ea-a2c2-c5de804eabca.png)
+
 
 
 ![image](https://user-images.githubusercontent.com/94169022/143215555-aec19cc2-b1de-4869-9ce5-ed6f5ea13ce3.png)
 
 
-![image](https://user-images.githubusercontent.com/94169022/143197965-01b136ee-a391-4296-b560-de341ecd95d5.png)
+
 
 ![image](https://user-images.githubusercontent.com/94169022/143198162-5a3f0140-4b52-43fa-a777-ebee77981e38.png)
