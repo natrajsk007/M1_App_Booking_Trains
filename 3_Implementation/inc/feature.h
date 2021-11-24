@@ -9,6 +9,11 @@
  * 
  */
 
+#include<stdio.h>
+#include<stdlib.h>
+#define size 2
+
+
 node* deq();
 int create();
 int reserve(node*);
