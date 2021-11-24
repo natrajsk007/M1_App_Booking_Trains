@@ -33,6 +33,12 @@ In this project I am going to include entities like
    -Display reserved
    -Waiting list passengers
 
+   ##  *AGEING-FEATURE EVOLUTION IN FUTURE SCOPES*
+   -Tracking live location of trains
+   -Pre order the food and drinks
+   -Alarm before the stopping if night travel applicable
+   -Notify the destination time on the booking time
+
 
 ## *4W's and 1H's*
 
@@ -155,6 +161,17 @@ In this project I am going to include entities like
 # **MAIN PROGRAM**
 
 
+/**
+ * @file main.c
+ * @author Natarajan K
+ * @brief Main
+ * @version 0.1
+ * @date 2021-11-23
+ * 
+ * @copyright Copyright (c) 2021
+ * 
+ */
+
 #include<stdio.h>
 #include<stdlib.h>
 #define size 2
@@ -162,9 +179,9 @@ In this project I am going to include entities like
 
 typedef struct NODE
 {
-	int reg_no;
+	int booking_no;
 	int age;
-	char name[20];
+	char name[25];
 	struct NODE *next;
 } node;
 
@@ -186,7 +203,7 @@ int create( )
 {
 	node *new;
 	new=(node *)malloc(sizeof(node));
-	new->reg_no=1;
+	new->booking_no=1;
 	printf("Name: ");
 	scanf("%s", new->name);
 	printf("Age : ");
@@ -233,7 +250,7 @@ int reserve(node *start)
 	if(num<=size)
 	{
 		num++;
-		new_node->reg_no=num;
+		new_node->booking_no=num;
 		temp->next=new_node;
 		
 		return 1;
@@ -247,14 +264,14 @@ int reserve(node *start)
 }
 
 
-int cancel(int reg)
+int cancel(int booking)
 {
 	node *ptr, *preptr, *new;
 	ptr=start;
 	preptr=NULL;
 	if(start==NULL)
 	return -1;
-	if(ptr->next==NULL && ptr->reg_no==reg)
+	if(ptr->next==NULL && ptr->booking_no==booking)
 		{
 		start=NULL;
 		num--;
@@ -264,12 +281,12 @@ int cancel(int reg)
 		}
 		
 	else{	
-	while(ptr->reg_no!=reg && ptr->next!=NULL)
+	while(ptr->booking_no!=booking && ptr->next!=NULL)
 		{
 			preptr=ptr;
 			ptr=ptr->next;
 		}
-		if(ptr==NULL && ptr->reg_no!=reg)
+		if(ptr==NULL && ptr->booking_no!=booking)
 			return -1;
 		else
 			preptr->next=ptr->next;
@@ -335,7 +352,7 @@ void display()
 	temp=start;
 	while(temp!=NULL)
 	{
-		printf("\nRegistration Number: %d\n", temp->reg_no);
+		printf("\nBooking Number: %d\n", temp->booking_no);
 		printf("Name : %s\n\n", temp->name);
 		temp=temp->next;
     }
@@ -344,18 +361,18 @@ void display()
 
 int main()
 {
-	int choice, status=0,canc=0, reg=0;
+	int choice, status=0,canc=0, booking=0;
 	start=NULL;
 	rear=NULL;
 	front=NULL;
 	
 	
 	
-	printf("\t\t\t**RAILWAY RESERVATION**\t\t\t\t\n");
+	printf("\t\t\t**BOOKING TRAINS**\t\t\t\t\n");
 	int ch =0;
 	while(ch!=4)
 	{
-	printf("\n\nDo you want to - \n 1. Book a ticket \n 2. Cancel Booking \n 3. Display passenger details \n 4. exit\n\n");
+	printf("\n\nDo you want to - \n 1. Ticket Booking \n 2. Cancel Booking \n 3. Display passenger details \n 4. exit\n\n");
 	scanf("%d", &choice); 
 	switch(choice)
 	{	
@@ -366,21 +383,21 @@ int main()
                       printf("\n age not eligible");
                   }
                   else
-	                printf(" \nBooking Successful!!! Enjoy your journey! Your Reg No is %d\n\n", num);
+	                printf(" \nBooking Successful!!! Enjoy your journey! Your Booking No is %d\n\n", num);
 	                
 	              break;
 	        
-	    case 2:   printf(" \n Give the Registration number to be cancelled\n");
-	              scanf(" %d", &reg);
-	              if(reg>num)
+	    case 2:   printf(" \n Give the Booking number to be cancelled\n");
+	              scanf(" %d", &booking);
+	              if(booking>num)
 	              printf("Invalid!!");
 	              else
 	              {
-	              canc=cancel(reg);
+	              canc=cancel(booking);
 	              if(canc==-1)
-	              	printf("\nRegistration number invalid!!\n");
+	              	printf("\nBooking number invalid!!\n");
 	              else
-	              	printf("\nRegistration cancelled successfully\n");
+	              	printf("\nBooking cancelled successfully\n");
 	              	}
 	              break;
 	              
@@ -425,3 +442,35 @@ int main()
 
 ![Flowchart-of-conventional-and-online-ticket-reservations]![Screenshot (119)]![Screenshot (120)](https://user-images.githubusercontent.com/94169022/143005778-2259fc4e-b636-419f-b2ce-45c7318d787f.png)
 
+
+# M1_App_Booking_Trains
+
+*Reservation of tickets in Railways*
+
+| Build | Code Analysis - Static & Dynamaic | Unity | Code Quality | Git Inspector |
+|---|---|---|---|---|
+| [![Linux OS Build](https://github.com/natrajsk007/M1_App_Booking_Trains/actions/workflows/Linux.yml/badge.svg)](https://github.com/natrajsk007/M1_App_Booking_Trains/actions/workflows/Linux.yml) | [![Code Quality - Static Code - Cppcheck](https://github.com/natrajsk007/M1_App_Booking_Trains/actions/workflows/cppcheck.yml/badge.svg)](https://github.com/natrajsk007/M1_App_Booking_Trains/actions/workflows/cppcheck.yml) | [![Unit testing - Unity](https://github.com/natrajsk007/M1_App_Booking_Trains/actions/workflows/unity.yml/badge.svg)](https://github.com/natrajsk007/M1_App_Booking_Trains/actions/workflows/unity.yml) | ![Code Quality Score](https://api.codiga.io/project/29805/score/svg) ![Code Grade](https://api.codiga.io/project/29805/status/svg) [![Codacy Badge](https://app.codacy.com/project/badge/Grade/64062f40fcd344b2af90a97dbfe2653d)](https://www.codacy.com/gh/natrajsk007/M1_App_Booking_Trains/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=natrajsk007/M1_App_Booking_Trains&amp;utm_campaign=Badge_Grade) | [![Contribution Check - Git Inspector](https://github.com/natrajsk007/M1_App_Booking_Trains/actions/workflows/gitinspector.yml/badge.svg)](https://github.com/natrajsk007/M1_App_Booking_Trains/actions/workflows/gitinspector.yml) |
+
+# Folder Structure
+| Folder   |      Description     |  
+|----------|:-------------:|
+| 1_Requirements |  Documents detailing requirements and research |
+| 2_Design |    Documents specifying design  | 
+| 3_Implementation |   All codes and Documentation  |
+| 4_TestPlan |  Documents with test plans and Output |
+| 5_Report |    Documentation of whole project  | 
+| 6_Images |    All the images of this project  |
+
+# IMAGES
+
+
+
+
+
+![image](https://user-images.githubusercontent.com/94169022/143197928-b827589e-b98a-4b89-83b8-fa4a9e8e9285.png)
+
+
+
+
+
+![image](https://user-images.githubusercontent.com/94169022/143198162-5a3f0140-4b52-43fa-a777-ebee77981e38.png)
