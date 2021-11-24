@@ -1,19 +1,19 @@
 # *Test Plan*
 
-# High Level Test Plan
-| ID   |      Description     |  Expected o/p |
+# High Level Test Plan 
+| ID   |      Description       |  Expected I/P  |  Expected O/P |  Actual O/P  |  Type Of Test  |
 |----------|:-------------:|------:|
-| HLTP_1 |  Get any Option from the user| Implemented  |
-| HLTP_2 |  Get Name from the user  | Implemented  |
-| HLTP_3 |  Get Age from the user | Implemented|
-| HLTP_3 |  Get Registration Number from the user | Implemented|
+| HLTP_1 |  Get any Option from the user | CHOICE |  SUCCESS |  SUCCESS |  Requirement Based  |
+| HLTP_2 |  Get Name from the user |  CHOICE |  SUCCESS |  SUCCESS | Requirement Based  |
+| HLTP_3 |  Get Age from the user | CHOICE |  SUCCESS |  SUCCESS | Requirement Based  |
+| HLTP_3 |  Get Registration Number from the user | CHOICE |  SUCCESS |  SUCCESS | Requirement Based |
 
 # Low Level Test Plan
-| ID   |      Description     |  Expected o/p |
+| ID   |      Description     |  Expected I/P | Expected O/P | Actual O/P | Type Of Test |
 |----------|:-------------:|------:|
-| LLTP_1 |  Input from the user | 1  |
-| LLTP_1 |  Cancel Booking| 2  |
-| LLTP_2 |  Exit the program | 4 |
+| LLTP_1 |  Input from the user | 1  | Ticket Booking | Ticket Booking | Requirement Based |
+| LLTP_1 |  Cancel Booking | 2  | Cancel Booking | Cancel Booking | Requirement Based |
+| LLTP_2 |  Exit the program | 4 | exit | exit | Requirement Based |
 
 
 # *OUTPUT*
