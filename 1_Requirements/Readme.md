@@ -10,6 +10,10 @@
 2.In this I am discussing that how the reservation is done with the feature of cancelling and waiting list.
 
 
+# **STATE OF ART/RESEARCH**
+
+
+
 ## *OBJECTIVE OF THE PROJECT*
 
 
