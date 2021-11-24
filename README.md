@@ -16,10 +16,7 @@
 | 5_Report |    Documentation of whole project  | 
 | 6_Images |    All the images of this project  |
 
-# IMAGES AND GIFS
-
-
-![image](https://user-images.githubusercontent.com/94169022/143197759-67357946-41ce-449b-a39b-64aa3ce4c709.png)
+# IMAGES
 
 
 
@@ -27,11 +24,6 @@
 
 ![image](https://user-images.githubusercontent.com/94169022/143197928-b827589e-b98a-4b89-83b8-fa4a9e8e9285.png)
 
-
-
-
-
-![image](https://user-images.githubusercontent.com/94169022/143215555-aec19cc2-b1de-4869-9ce5-ed6f5ea13ce3.png)
 
 
 
