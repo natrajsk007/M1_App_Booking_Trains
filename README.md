@@ -15,3 +15,12 @@
 | 4_TestPlan |  Documents with test plans and Output |
 | 5_Report |    Documentation of whole project  | 
 | 6_Images |    All the images of this project  |
+
+
+![image](https://user-images.githubusercontent.com/94169022/143197759-67357946-41ce-449b-a39b-64aa3ce4c709.png)
+
+![image](https://user-images.githubusercontent.com/94169022/143197928-b827589e-b98a-4b89-83b8-fa4a9e8e9285.png)
+
+![image](https://user-images.githubusercontent.com/94169022/143197965-01b136ee-a391-4296-b560-de341ecd95d5.png)
+
+![image](https://user-images.githubusercontent.com/94169022/143198162-5a3f0140-4b52-43fa-a777-ebee77981e38.png)
